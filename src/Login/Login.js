@@ -45,12 +45,13 @@ function Login() {
             const notifyMethod = exists ? notificationApi.success : notificationApi.error;
             notifyMethod({
                 message: exists ? "Successfully logged in! Redirecting to user's page..." :
-                    "User doesn't unfortunately exist",
+                    "Unfortunately user doesn't exist",
                 showProgress: true,
                 onClose: () => {
-                    navigate("/user");
-                },
-                duration: 5
+                    if (exists) {
+                        navigate("/user");
+                    }
+                }
             });
         }
         else if (error) {
