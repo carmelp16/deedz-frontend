@@ -38,6 +38,10 @@ function Login() {
 
     const navigate = useNavigate();
 
+
+  const handleRedirectSignup = () => {
+    navigate('/signup');
+  };
     React.useEffect(() => {
         if (!isLoading && data) {
             localStorage.setItem("user", JSON.stringify(data));
@@ -95,7 +99,9 @@ function Login() {
             <Button onClick={handleSubmit(mutate)} loading={isLoading}>
                 {isLoading ? "Loading..." : "Login"}
             </Button>
-            <CreateAccountText>Don't have an account yet? Create a new one! 😊</CreateAccountText>
+            <CreateAccountText onClick={()=> {
+            handleRedirectSignup()
+        }} >Don't have an account yet? Create a new one! 😊</CreateAccountText>
         </Wrapper>
     </>;
 }

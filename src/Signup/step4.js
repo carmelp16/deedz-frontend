@@ -4,6 +4,8 @@ import { EyeInvisibleOutlined, EyeTwoTone } from '@ant-design/icons';
 import { getApiUrl } from "../api/common";
 import { Logo } from "../common";
 import FormItem from "antd/es/form/FormItem";
+import {useNavigate} from "react-router-dom";
+
 
 const containerStyle = {
     display: 'flex',
@@ -25,6 +27,11 @@ const StepFour = (formData, setFormData) => {
     const onFinish = () => {
         setFormData({...formData})
     }
+    const navigate = useNavigate();
+
+  const handleRedirectSignup = () => {
+    navigate('/Login');
+  };
 
     const sendNewUser = ({formData: data}) => {
         console.log(JSON.stringify(data))
@@ -43,6 +50,7 @@ const StepFour = (formData, setFormData) => {
             });
             const respJson = await resp.json();
             console.log(respJson);
+            handleRedirectSignup();
         };
 
         _send();

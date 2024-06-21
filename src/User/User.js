@@ -7,6 +7,7 @@ import {MapView} from "./MapView";
 import {Logo} from "../common";
 import {useNavigate} from "react-router-dom";
 
+
 const Wrapper = styled.div`
     padding: 10px;
 `;
@@ -22,7 +23,10 @@ const items = [
     {
         key: '1',
         label: 'Map view',
-        children: <MapView />
+        children: <MapView onClick={()=> {
+            const navigate = useNavigate();
+            navigate('/matches');
+        }}/>
     },
     {
         key: '2',

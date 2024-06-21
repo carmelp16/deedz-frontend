@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react';
-import axios from 'axios';
 import { List, Card, Spin, Button } from 'antd';
 import { getApiUrl } from "../api/common";
 
@@ -67,7 +66,7 @@ const Matches = ({negibourhoodName, user_id, negibourhoodName_id}) => {
 
   return (
     <div style={containerStyle}>
-        <h2> שכונת זיו{ negibourhoodName } </h2>;    // neighbourhood_name
+        <h2> שכונת זיו{ negibourhoodName } </h2>;
       <Button type="primary" onClick={handleFilterForMe} style={{ marginBottom: '20px' }}>
         Filter For Me
       </Button>
@@ -80,7 +79,7 @@ const Matches = ({negibourhoodName, user_id, negibourhoodName_id}) => {
           dataSource={tasks}
           renderItem={item => (
             <List.Item>
-              <Card title={`${item.executing_helper_username} needs Some help - status: ${item.status}`}> 
+              <Card title={`Amit needs Some help - status: ${item.status}`}> 
                 <p><strong>Details:</strong> {item.task_details}</p>
                 <p><strong>Category:</strong> {item.category}</p>
                 <p> time to complete the task -  {item.task_time}</p>
