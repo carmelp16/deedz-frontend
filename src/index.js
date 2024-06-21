@@ -6,6 +6,8 @@ import * as serviceWorker from './serviceWorker';
 import {QueryClient, QueryClientProvider} from "react-query";
 import {createBrowserRouter, RouterProvider} from "react-router-dom";
 import {Login} from "./Login";
+import {Signup} from "./Signup"
+import { Matches } from './Matches';
 import {User} from "./User";
 
 const queryClient = new QueryClient();
@@ -18,6 +20,14 @@ const router = createBrowserRouter([
     {
         path: "login",
         element: <Login/>
+    },
+    {
+        path: "signup",
+        element: <Signup/>
+    },
+    {
+        path: "matches",
+        element: <Matches />
     },
     {
         path: "user",
