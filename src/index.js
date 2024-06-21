@@ -5,6 +5,8 @@ import App from './App';
 import * as serviceWorker from './serviceWorker';
 import {QueryClient, QueryClientProvider} from "react-query";
 import {createBrowserRouter, RouterProvider} from "react-router-dom";
+import {Login} from "./Login";
+import {User} from "./User";
 
 const queryClient = new QueryClient();
 
@@ -13,6 +15,14 @@ const router = createBrowserRouter([
         path: "/",
         element: <App/>
     },
+    {
+        path: "login",
+        element: <Login/>
+    },
+    {
+        path: "user",
+        element: <User/>
+    }
 ]);
 
 ReactDOM.render(
